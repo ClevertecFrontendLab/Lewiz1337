@@ -9,10 +9,10 @@ import {
 import { Space } from 'antd';
 import Sider from 'antd/lib/layout/Sider';
 import classNames from 'classnames';
-import Exit from '@assets/Exit.svg?react';
-import FitText from '@assets/Fit.svg?react';
-import Logo from '@assets/Logo.svg?react';
-import IdCard from '@assets/IdCard.svg?react';
+import Exit from '../../assets/Exit.svg?react';
+import FitText from '../../assets/Fit.svg?react';
+import Logo from '../../assets/Logo.svg?react';
+import IdCard from '../../assets/IdCard.svg?react';
 import styles from './sidebar.module.less';
 import { LinkButton } from '@components/link-button';
 
