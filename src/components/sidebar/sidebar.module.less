@@ -1,0 +1,122 @@
+@import '../../less/colors.less';
+
+.sider {
+    background: @body-background;
+    box-shadow: @shadow-1-down;
+    position: relative;
+    padding: 47px 0 0;
+    @media (max-width: 1100px) {
+        padding: 45px 0 0;
+    }
+}
+.logoWrapper {
+    height: 33px;
+    display: flex;
+    padding-left: 29px;
+    &.logoWrapperCollapsed {
+        padding-left: unset;
+        display: flex;
+        justify-content: center;
+        @media (max-width: 1100px) {
+            svg {
+                width: 30px;
+                margin-top: 4px;
+            }
+        }
+    }
+}
+.navigation {
+    width: 100%;
+    display: flex;
+    gap: 17px;
+    margin-top: 65px;
+    @media (max-width: 1100px) {
+        margin-top: 67px;
+    }
+    button {
+        padding-left: 17px;
+    }
+    :global {
+        span.ant-typography {
+            margin-left: 10px;
+        }
+    }
+}
+.menuTrigger {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @height: 66px;
+    @width: 20px;
+    width: @width;
+    top: calc(50% - (@height / 2));
+    right: -@width;
+    height: @height;
+    background-image: url(../../assets/Rectangle.svg);
+}
+.exitButton {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    bottom: 0;
+    padding: 0 16px;
+    height: 40px;
+    span {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+    }
+}
+
+@media (max-width: 834px) {
+    .sider {
+        padding-top: 8px;
+        position: fixed;
+        height: 100%;
+        z-index: 9;
+        &.collapsedSider {
+            left: -64px;
+        }
+    }
+    .logoWrapper {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        svg {
+            width: 72px;
+        }
+    }
+    .navigation {
+        gap: 9px;
+        margin-top: 26px;
+        button {
+            padding: 0;
+            svg {
+                display: none;
+            }
+        }
+        :global {
+            span.ant-typography {
+                margin-left: 8px;
+            }
+        }
+    }
+    .exitButton {
+        justify-content: center;
+        svg {
+            display: none;
+        }
+    }
+
+    .menuTrigger {
+        top: 24px;
+        height: 48px;
+        width: 32px;
+        right: -32px;
+        background-image: url(../../assets/RectangleMobile.svg);
+    }
+}

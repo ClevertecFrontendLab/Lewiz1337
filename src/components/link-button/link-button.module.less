@@ -1,0 +1,18 @@
+@import '../../less/colors.less';
+
+.root {
+    height: 42px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    svg {
+        path {
+            fill: @primary-light-9;
+        }
+    }
+    &.collapsed {
+        display: flex;
+        justify-content: center;
+    }
+}

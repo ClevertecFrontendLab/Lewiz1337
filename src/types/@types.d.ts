@@ -1,0 +1,1 @@
+type ReactChild = JSX.Element | string | JSX.Element[];

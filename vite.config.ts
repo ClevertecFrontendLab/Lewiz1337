@@ -2,13 +2,27 @@ import path from 'path';
 
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-    plugins: [react()],
+    plugins: [
+        react(),
+        svgr(),
+    ],
     server: {
         host: true,
         port: 3000,
     },
+    css: {
+        preprocessorOptions: {
+            less: {
+                math: 'always',
+                relativeUrls: true,
+                javascriptEnabled: true,
+            },
+        },
+    },
+
     resolve: {
         alias: {
             '@public': path.resolve(__dirname, 'public'),
@@ -19,6 +33,7 @@ export default defineConfig({
             '@redux': path.resolve(__dirname, 'src/redux'),
             '@types': path.resolve(__dirname, 'src/types'),
             '@utils': path.resolve(__dirname, 'src/utils'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
         },
     },
 });

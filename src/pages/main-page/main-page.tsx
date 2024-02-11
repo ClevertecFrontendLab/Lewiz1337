@@ -1,34 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Card, Typography } from 'antd';
+import { CalendarOutlined, HeartFilled, IdcardOutlined } from '@ant-design/icons';
+import { possibilityDescText, secondDescText } from '@constants/texts';
+import 'antd/dist/antd.css';
 
-import reactLogo from '/react.svg';
-import viteLogo from '/vite.svg';
-import tsLogo from '/ts.svg';
-import './main-page.css';
+import styles from './main-page.module.less';
+import { LinkButton } from '@components/link-button';
+import { PageLayout } from '@components/page-layout';
+import { ActionCard } from '@components/action-card';
 
+const { Paragraph } = Typography;
 export const MainPage: React.FC = () => {
-    const [count, setCount] = useState(0);
-
     return (
-        <>
-            <div>
-                <a href='https://vitejs.dev' target='_blank'>
-                    <img src={viteLogo} className='logo' alt='Vite logo' />
-                </a>
-                <a href='https://react.dev' target='_blank'>
-                    <img src={reactLogo} className='logo react' alt='React logo' />
-                </a>
-                <a href='https://www.typescriptlang.org/' target='_blank'>
-                    <img src={tsLogo} className='logo' alt='TS logo' />
-                </a>
+        <PageLayout>
+            <div className={styles.grid}>
+                <Card className={styles.firstDescription}>
+                    <Paragraph className={styles.blueText}>{possibilityDescText}</Paragraph>
+                </Card>
+                <Card className={styles.secondDescription}>
+                    <Paragraph className={styles.descText}>{secondDescText}</Paragraph>
+                </Card>
+                <ActionCard className={styles.card1} title='Расписать тренировки'>
+                    <LinkButton icon={<HeartFilled />} text='Тренировки' />
+                </ActionCard>
+                <ActionCard className={styles.card2} title='Назначить календарь'>
+                    <LinkButton icon={<CalendarOutlined />} text='Календарь' />
+                </ActionCard>
+                <ActionCard className={styles.card3} title='Заполнить профиль'>
+                    <LinkButton icon={<IdcardOutlined />} text='Профиль' />
+                </ActionCard>
             </div>
-            <h1>Vite + React + TS</h1>
-            <div className='card'>
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/pages/main-page.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-        </>
+        </PageLayout>
     );
 };
