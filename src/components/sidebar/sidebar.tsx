@@ -1,12 +1,12 @@
 import React from 'react';
-import {
+import Icon, {
     HeartFilled,
     TrophyFilled,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
     CalendarTwoTone,
 } from '@ant-design/icons';
-import { Space } from 'antd';
+import { Button, Menu } from 'antd';
 import Sider from 'antd/lib/layout/Sider';
 import classNames from 'classnames';
 import Exit from '@assets/Exit.svg?react';
@@ -14,9 +14,8 @@ import FitText from '@assets/Fit.svg?react';
 import Logo from '@assets/Logo.svg?react';
 import IdCard from '@assets/IdCard.svg?react';
 import styles from './sidebar.module.less';
-import { LinkButton } from '@components/link-button';
 
-const mobileBreackpoint = 834;
+const mobileBreackpoint = 764;
 
 export const Sidebar = () => {
     const [collapsed, setCollapsed] = React.useState<boolean>(false);
@@ -61,20 +60,37 @@ export const Sidebar = () => {
             >
                 {collapsed ? <FitText /> : <Logo />}
             </div>
-            <Space.Compact direction='vertical' className={styles.navigation}>
-                <LinkButton icon={<CalendarTwoTone />} text='Календарь' collapsed={collapsed} />
-                <LinkButton icon={<HeartFilled />} text='Тренировки' collapsed={collapsed} />
-                <LinkButton icon={<TrophyFilled />} text='Достижения' collapsed={collapsed} />
-                <LinkButton icon={<IdCard />} text='Профиль' collapsed={collapsed} />
-            </Space.Compact>
+            <Menu
+                className={classNames({ [styles.navigation]: true, [styles.collapsed]: collapsed })}
+            >
+                <Menu.Item itemType='button' icon={<CalendarTwoTone />}>
+                    Календарь
+                </Menu.Item>
+                <Menu.Item itemType='button' icon={<HeartFilled />}>
+                    Тренировки
+                </Menu.Item>
+                <Menu.Item itemType='button' icon={<TrophyFilled />}>
+                    Достижения
+                </Menu.Item>
+                <Menu.Item
+                    itemType='button'
+                    icon={
+                        <Icon>
+                            <IdCard />
+                        </Icon>
+                    }
+                >
+                    Профиль
+                </Menu.Item>
+            </Menu>
             <SiderTrigger collapsed={collapsed} setCollapsed={setCollapsed} />
-            <LinkButton
-                className={styles.exitButton}
+            <Button
+                className={classNames({ [styles.exitButton]: true, [styles.collapsed]: collapsed })}
                 icon={<Exit />}
                 type='default'
-                text='Выход'
-                collapsed={collapsed}
-            />
+            >
+                Выход
+            </Button>
         </Sider>
     );
 };

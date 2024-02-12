@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Typography } from 'antd';
-import { CalendarOutlined, HeartFilled, IdcardOutlined } from '@ant-design/icons';
+import { CalendarTwoTone, HeartFilled, IdcardOutlined } from '@ant-design/icons';
 import { possibilityDescText, secondDescText } from '@constants/texts';
 import 'antd/dist/antd.css';
 
@@ -24,7 +24,7 @@ export const MainPage: React.FC = () => {
                     <LinkButton icon={<HeartFilled />} text='Тренировки' />
                 </ActionCard>
                 <ActionCard className={styles.card2} title='Назначить календарь'>
-                    <LinkButton icon={<CalendarOutlined />} text='Календарь' />
+                    <LinkButton icon={<CalendarTwoTone />} text='Календарь' />
                 </ActionCard>
                 <ActionCard className={styles.card3} title='Заполнить профиль'>
                     <LinkButton icon={<IdcardOutlined />} text='Профиль' />

@@ -1,4 +1,4 @@
-@import '../../less/colors.less';
+@import '../../less/default.less';
 
 .sider {
     background: @body-background;
@@ -7,6 +7,9 @@
     padding: 47px 0 0;
     @media (max-width: 1100px) {
         padding: 45px 0 0;
+    }
+    &.collapsedSider {
+        padding: 50px 0 0;
     }
 }
 .logoWrapper {
@@ -17,28 +20,43 @@
         padding-left: unset;
         display: flex;
         justify-content: center;
-        @media (max-width: 1100px) {
-            svg {
-                width: 30px;
-                margin-top: 4px;
-            }
-        }
     }
 }
 .navigation {
     width: 100%;
-    display: flex;
-    gap: 17px;
-    margin-top: 65px;
+    margin-top: 67px;
     @media (max-width: 1100px) {
-        margin-top: 67px;
+        margin-top: 68px;
     }
-    button {
-        padding-left: 17px;
+    svg {
+        width: 16px;
+        path {
+            fill: @primary-light-9;
+        }
     }
     :global {
+        li.ant-menu-item {
+            height: 42px;
+            margin-top: 0;
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
         span.ant-typography {
             margin-left: 10px;
+            font-size: 14px;
+        }
+    }
+    &.collapsed {
+        margin-top: 60px;
+        :global {
+            li.ant-menu-item {
+                display: flex;
+                justify-content: center;
+                span.ant-menu-title-content {
+                    display: none;
+                }
+            }
         }
     }
 }
@@ -65,14 +83,26 @@
     bottom: 0;
     padding: 0 16px;
     height: 40px;
+    border-right: none;
+    border-left: none;
     span {
         font-weight: 400;
         font-size: 14px;
         line-height: 130%;
     }
+    svg {
+        path {
+            fill: @character-title;
+        }
+    }
+    &.collapsed {
+        span {
+            display: none;
+        }
+    }
 }
 
-@media (max-width: 834px) {
+@media @maxMobile {
     .sider {
         padding-top: 8px;
         position: fixed;
@@ -91,17 +121,20 @@
         }
     }
     .navigation {
-        gap: 9px;
-        margin-top: 26px;
-        button {
-            padding: 0;
-            svg {
-                display: none;
-            }
-        }
+        margin-top: 27px;
         :global {
-            span.ant-typography {
+            span.ant-menu-title-content {
+                padding: 0;
                 margin-left: 8px;
+            }
+            li.ant-menu-item {
+                padding: 0;
+                span.anticon {
+                    display: none;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 8px;
+                }
             }
         }
     }
