@@ -1,0 +1,155 @@
+@import '../../less/default.less';
+
+.sider {
+    background: @body-background;
+    box-shadow: @shadow-1-down;
+    position: relative;
+    padding: 47px 0 0;
+    @media (max-width: 1100px) {
+        padding: 45px 0 0;
+    }
+    &.collapsedSider {
+        padding: 50px 0 0;
+    }
+}
+.logoWrapper {
+    height: 33px;
+    display: flex;
+    padding-left: 29px;
+    &.logoWrapperCollapsed {
+        padding-left: unset;
+        display: flex;
+        justify-content: center;
+    }
+}
+.navigation {
+    width: 100%;
+    margin-top: 67px;
+    @media (max-width: 1100px) {
+        margin-top: 68px;
+    }
+    svg {
+        width: 16px;
+        path {
+            fill: @primary-light-9;
+        }
+    }
+    :global {
+        li.ant-menu-item {
+            height: 42px;
+            margin-top: 0;
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+        span.ant-typography {
+            margin-left: 10px;
+            font-size: 14px;
+        }
+    }
+    &.collapsed {
+        margin-top: 60px;
+        :global {
+            li.ant-menu-item {
+                display: flex;
+                justify-content: center;
+                span.ant-menu-title-content {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.menuTrigger {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @height: 66px;
+    @width: 20px;
+    width: @width;
+    top: calc(50% - (@height / 2));
+    right: -@width;
+    height: @height;
+    background-image: url(../../assets/Rectangle.svg);
+}
+.exitButton {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    bottom: 0;
+    padding: 0 16px;
+    height: 40px;
+    border-right: none;
+    border-left: none;
+    span {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+    }
+    svg {
+        path {
+            fill: @character-title;
+        }
+    }
+    &.collapsed {
+        span {
+            display: none;
+        }
+    }
+}
+
+@media @maxMobile {
+    .sider {
+        padding-top: 8px;
+        position: fixed;
+        height: 100%;
+        z-index: 9;
+        &.collapsedSider {
+            left: -64px;
+        }
+    }
+    .logoWrapper {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        svg {
+            width: 72px;
+        }
+    }
+    .navigation {
+        margin-top: 27px;
+        :global {
+            span.ant-menu-title-content {
+                padding: 0;
+                margin-left: 8px;
+            }
+            li.ant-menu-item {
+                padding: 0;
+                span.anticon {
+                    display: none;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+    .exitButton {
+        justify-content: center;
+        svg {
+            display: none;
+        }
+    }
+
+    .menuTrigger {
+        top: 24px;
+        height: 48px;
+        width: 32px;
+        right: -32px;
+        background-image: url(../../assets/RectangleMobile.svg);
+    }
+}

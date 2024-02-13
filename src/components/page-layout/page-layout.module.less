@@ -1,0 +1,35 @@
+@import '../../less/default.less';
+
+.root {
+    width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-image: url(../../assets/MainPage_light.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: 1440px) {
+        width: 100%;
+    }
+}
+
+.ContentWrapper {
+    background-color: transparent;
+}
+.content {
+    padding: 24px;
+    background-repeat: no-repeat;
+    width: 100%;
+    @media @maxMobile {
+        padding: 24px 16px;
+    }
+}
+.mainWrapper {
+    width: max-content;
+    background: transparent;
+    @media (max-width: 1200px) {
+        height: 1194px;
+    }
+    @media @maxMobile {
+        height: unset;
+    }
+}

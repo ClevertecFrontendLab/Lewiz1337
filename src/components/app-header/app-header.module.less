@@ -1,0 +1,76 @@
+@import '../../less/default.less';
+:global {
+    .ant-layout-header {
+        padding: 16px 24px 0;
+        height: auto;
+        @media (max-width: 1100px) {
+            padding-bottom: 11px;
+        }
+    }
+}
+.root {
+    background: @primary-light-1;
+}
+.titleWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    :global {
+        h1.ant-typography {
+            margin-top: 12px;
+            @media (max-width: 1100px) {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 30px;
+            }
+            @media @maxMobile {
+                font-size: 20px;
+                margin-top: 0;
+                line-height: 27px;
+            }
+        }
+    }
+}
+.settingsButton {
+    width: unset;
+    span {
+        color: @character-title;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    svg {
+        path {
+            fill: @character-title;
+        }
+        @media (max-width: 1100px) {
+            :global {
+                span.anticon {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media @maxMobile {
+    .settingsButton {
+        align-items: start;
+        padding: 0;
+        position: relative;
+        top: -5px;
+        :global {
+            span.ant-typography {
+                display: none;
+            }
+            span.anticon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 32px;
+                height: 32px;
+                background: @gray-1;
+                border: 1px solid @character-border;
+                border-radius: 50%;
+            }
+        }
+    }
+}
