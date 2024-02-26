@@ -6,6 +6,7 @@ import styles from './page-layout.module.less';
 import { Sidebar } from '@components/sidebar';
 import { AppHeader } from '@components/app-header';
 import { AppFooter } from '@components/app-footer';
+import { history } from '@redux/configure-store';
 
 interface PageLayoutProps {
     children?: ReactChild;
@@ -13,6 +14,12 @@ interface PageLayoutProps {
 
 const { Content } = Layout;
 export const PageLayout: React.FC<PageLayoutProps> = (props) => {
+    React.useLayoutEffect(() => {
+        if (!(localStorage.getItem('jwtToken') || sessionStorage.getItem('jwtToken'))) {
+            history.push('/');
+        }
+    }, []);
+
     return (
         <Layout hasSider={true} className={styles.root}>
             <Sidebar />

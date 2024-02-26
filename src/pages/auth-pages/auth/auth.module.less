@@ -1,0 +1,127 @@
+@import '../../../less/default.less';
+
+.layout {
+    align-items: start;
+}
+.content {
+    margin-top: 140px;
+    margin-bottom: 142px;
+    @media @max1440 {
+        margin-top: 200px;
+    }
+    @media @maxMobile {
+        margin-top: 90px;
+    }
+    @media (max-width: 572px) {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        padding: 32px 16px 108px;
+        * {
+            font-size: 14px;
+        }
+    }
+    padding: 64px 85.5px 158px;
+    .form {
+        margin-top: 8px;
+    }
+}
+
+.registrationContent {
+    margin-top: 168px;
+    @media @max1440 {
+        margin-top: 228px;
+    }
+    @media @maxMobile {
+        margin-top: 114px;
+        margin-bottom: 122px;
+    }
+    @media (max-width: 572px) {
+        left: 16px;
+        right: 16px;
+        padding: 32px 16px 16px;
+        * {
+            font-size: 14px;
+        }
+    }
+    padding: 64px 85.5px 48px;
+    .form {
+        margin-top: 16px;
+        @media (max-width: 572px) {
+            margin-top: 9px;
+            :global {
+                div.ant-form-item-explain {
+                    div {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.logoWrapper {
+    svg {
+        width: 309px;
+        height: 79px;
+        @media (max-width: 572px) {
+            height: 50px;
+        }
+    }
+}
+.formWrapper {
+    width: 368px;
+    margin-top: 40px;
+    @media (max-width: 572px) {
+        width: 100%;
+        margin-top: 26px;
+    }
+}
+
+.tabs {
+    :global {
+        div.ant-tabs-nav-list {
+            width: 100%;
+        }
+        div.ant-tabs-tab {
+            width: 50%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+        }
+        span.ant-input-group-addon {
+            width: 72px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: center;
+        }
+        label.ant-checkbox-wrapper {
+            span {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 130%;
+            }
+        }
+        a.login-form-forgot {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+            @media (max-width: 579px) {
+                font-size: 14px;
+                margin-right: 10px;
+            }
+        }
+        div.ant-form-item-explain {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 130%;
+            margin-top: 2px;
+        }
+    }
+
+    width: 100%;
+}

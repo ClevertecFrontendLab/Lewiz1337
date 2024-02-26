@@ -1,0 +1,62 @@
+@import '../../../less/default.less';
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    :global {
+        h1.ant-typography {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 130%;
+            margin: 0;
+            margin-top: 24px;
+            text-align: center;
+            letter-spacing: -0.1px;
+        }
+        span.ant-typography {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            b {
+                color: @character-secondary-85;
+            }
+            color: @character-secondary-85;
+            text-align: center;
+            @media (max-width: 579px) {
+                width: 90%;
+            }
+        }
+    }
+}
+
+.character {
+    border: 1px solid @character-light-border;
+    border-radius: 2px;
+    padding: 5px 12px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    &.error {
+        border: 1px solid @character-light-error;
+    }
+}
+.inputWrapper {
+    margin-top: 24px;
+    height: 40px;
+}
+.spamMessage {
+    margin-top: 24px;
+    @media (max-width: 579px) {
+        padding: 0 5%;
+    }
+}
+.characterInactive {
+    background-color: @white;
+}
