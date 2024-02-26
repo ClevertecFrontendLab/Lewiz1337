@@ -1,0 +1,15 @@
+export const PATH = {
+    auth: '/auth',
+    registration: '/auth/registration',
+    confirmEmail: '/auth/confirm-email',
+    main: '/main',
+    errorLogin: '/result/error-login',
+    success: '/result/success',
+    errorUserExist: '/result/error-user-exist',
+    error: '/result/error',
+    errorCheckEmailNoExist: '/result/error-check-email-no-exist',
+    errorCheckEmail: '/result/error-check-email',
+    changePassword: '/auth/change-password',
+    errorChangePassword: '/result/error-change-password',
+    successChangePassword: '/result/success-change-password',
+};

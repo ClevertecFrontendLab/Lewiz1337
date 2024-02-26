@@ -14,6 +14,8 @@ import FitText from '@assets/Fit.svg?react';
 import Logo from '@assets/Logo.svg?react';
 import IdCard from '@assets/IdCard.svg?react';
 import styles from './sidebar.module.less';
+import { history } from '@redux/configure-store';
+import { PATH } from '@constants/path';
 
 const mobileBreackpoint = 764;
 
@@ -28,6 +30,12 @@ export const Sidebar = () => {
         } else {
             setSiderWidth(208);
         }
+    };
+
+    const onExit = () => {
+        localStorage.clear();
+        sessionStorage.clear();
+        history.push(PATH.auth);
     };
 
     React.useEffect(() => {
@@ -88,6 +96,7 @@ export const Sidebar = () => {
                 className={classNames({ [styles.exitButton]: true, [styles.collapsed]: collapsed })}
                 icon={<Exit />}
                 type='default'
+                onClick={onExit}
             >
                 Выход
             </Button>

@@ -1,0 +1,49 @@
+@import '../../../less/default.less';
+
+.buttonBlock {
+    margin-top: 24px;
+    @media (max-width: 572px) {
+        margin-top: 19px;
+    }
+    button {
+        height: 40px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    :global {
+        button.ant-btn-primary {
+            span {
+                color: white;
+            }
+        }
+        @media (max-width: 572px) {
+            svg {
+                display: none;
+            }
+            button.ant-btn {
+                span {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .googleBtn {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        @media (max-width: 572px) {
+            svg {
+                display: none;
+            }
+        }
+    }
+    .loginBtn {
+        background-color: @primary-light-6;
+    }
+}
+.registerButton {
+    margin-top: 60px;
+    @media (max-width: 572px) {
+        margin-top: 55px;
+    }
+}

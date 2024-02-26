@@ -1,0 +1,58 @@
+@import '../../less/default.less';
+
+:global {
+    main.ant-layout-content {
+        flex: none;
+    }
+}
+
+.card {
+    border-radius: 2px;
+    padding: 64px 85.5px;
+    width: 539px;
+    @media (max-width: 572px) {
+        padding: 32px 16px;
+
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        width: unset;
+    }
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    background: @character-light-primary-inverse;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.root {
+    background: url(../../assets/AuthBackground.png) no-repeat;
+    background-size: cover;
+    margin: auto;
+    width: 1440px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media @max1440 {
+        width: 100%;
+    }
+    :global {
+        input.ant-input {
+            font-size: 14px;
+        }
+    }
+}
+.blur {
+    position: fixed;
+    width: 100%;
+    height: 100% !important;
+    min-height: 100vh;
+    top: 0;
+    width: 1440px;
+    @media @max1440 {
+        width: 100%;
+    }
+    backdrop-filter: blur(12px);
+    background: rgba(121, 156, 212, 0.5);
+}

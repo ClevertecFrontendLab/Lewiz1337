@@ -1,0 +1,17 @@
+.root {
+    padding: 64px 32px 56px;
+    :global {
+        span.ant-typography {
+            width: 75%;
+            @media (max-width: 579px) {
+                width: 100%;
+            }
+        }
+        button.ant-btn {
+            width: unset;
+            @media (max-width: 579px) {
+                margin-top: 24px;
+            }
+        }
+    }
+}
